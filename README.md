@@ -1,35 +1,45 @@
-# Gulion Bank
+# Gulion Bank website
 
-A responsive, static banking website concept with professional photography, account comparison tabs, product dialogs, and a savings contribution calculator.
+A professional, responsive fictional bank website with navy-and-gold styling, lifestyle photography, account comparison tabs, product dialogs, mobile navigation, and a savings contribution calculator.
+
+## Free GitHub Pages hosting
+
+The site files are ready to publish from the root of the `main` branch. No dependencies or build step are needed.
+
+### One-time activation
+
+1. Open [Settings → Pages](https://github.com/Korport/Gulion/settings/pages).
+2. Under **Build and deployment**, select **Deploy from a branch**.
+3. Choose the **main** branch and **/ (root)** folder, then click **Save**.
+4. Wait for the Pages deployment to finish. GitHub will show the published address.
+
+Expected website address after activation: **https://korport.github.io/Gulion/**
+
+This is a public repository and uses GitHub Pages' free static hosting. Future changes to `main` will republish automatically after Pages is enabled. The `.nojekyll` file tells GitHub to serve the site directly.
+
+No custom domain has been configured. To add one later, buy and verify the domain, follow GitHub Pages' custom-domain instructions, and configure DNS before enabling HTTPS. Do not add a CNAME file for a domain you do not own.
 
 ## Preview locally
 
-Open `dist/index.html` in a modern browser. No installation or build step is required. Google Fonts requires an internet connection; system fonts provide a fallback.
-
-## Publish with Cloudflare Pages
-
-1. In Cloudflare, open Workers & Pages and create a Pages project using Git integration.
-2. Connect this GitHub repository (`Korport/Gulion`).
-3. Set the production branch to `main`, framework preset to **None**, leave the build command empty, and set the output directory to `dist`.
-4. Deploy and check the provided `pages.dev` URL.
-5. After purchasing and verifying ownership of `gulionbank.com`, add the domain to Cloudflare, set the registrar's nameservers to those assigned by Cloudflare, and add `gulionbank.com` under the Pages project's Custom domains.
-6. Add `www.gulionbank.com` as another custom domain and configure a redirect to your preferred address.
-7. Verify HTTPS and both domain variants before sharing the site.
-
-Future commits to `main` automatically deploy after the Git integration is configured. This repository alone does not activate hosting or register a domain.
+Download or clone the repository and open `index.html` in a modern browser. Google Fonts uses an internet connection; system fonts provide a fallback. Images are included in the repository.
 
 ## Files
 
-- `dist/index.html`: page structure and metadata
-- `dist/style.css`: responsive styling
-- `dist/app.js`: account tabs, dialogs, mobile navigation, and calculator
-- `dist/assets/`: locally hosted photos
-- `PHOTO-CREDITS.md`: photograph sources
+- `index.html` — page structure and metadata
+- `style.css` — responsive layout and styling
+- `app.js` — interactive account tabs, calculator, dialogs, and mobile menu
+- `assets/` — locally hosted photographs
+- `PHOTO-CREDITS.md` — photograph sources
+- `.nojekyll` — direct static publishing on GitHub Pages
+
+## Editing
+
+Change text in `index.html`; account cards and dialog content are in `app.js`. Update colors and spacing in `style.css`. All asset paths are relative so the site works under `/Gulion/`.
 
 ## Scope
 
-Gulion Bank is a fictional concept. No real accounts, credentials, applications, payments, or banking services are processed. Calculator inputs are not saved or transmitted; the calculation includes contributions only, without interest, fees, or taxes. Product descriptions are illustrative.
+Gulion Bank is a fictional concept, not an operating financial institution. No real accounts, credentials, applications, payments, or banking services are processed. Calculator entries remain on the page and are not saved or transmitted. The calculation includes contributions only, without interest, fees, or taxes. Products are illustrative.
 
-## Checks performed
+## Validation
 
-JavaScript syntax and local asset references were checked. Live hosting, custom-domain setup, and browser visual verification remain to be completed.
+JavaScript syntax and local asset references passed checks before upload. Live deployment and visual browser checks must be completed after GitHub Pages is activated.
