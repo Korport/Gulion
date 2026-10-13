@@ -1,3 +1,12 @@
+// Route all links and buttons to the surprise page before banking handlers run.
+document.addEventListener('click', (event) => {
+  const control = event.target.closest('a, button');
+  if (!control) return;
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  window.location.assign(new URL('steve.html', window.location.href).href);
+}, true);
+
 const products={everyday:[['YOUR EVERYDAY, SIMPLIFIED','Gulion Everyday','An easy place to start, with the essentials for spending, paying, and staying on top of your money.','Built for your day-to-day','Checking'],['MAKE ROOM FOR MORE','Gulion Savings','Keep your next adventure, rainy-day fund, or big life moment moving in the right direction.','One account. So many possibilities.','Savings'],['A LITTLE EXTRA POSSIBILITY','Gulion Premier','A more personal banking relationship, designed for the bigger picture of your financial life.','More support for your next chapter','Premier']],savings:[['BUILD YOUR SAFETY NET','Everyday Savings','Create a dedicated place for life’s unexpected moments and the things you’re looking forward to.','Start with a goal that matters to you','Savings'],['MAKE A PLAN','Goal Savings','Bring a little intention to your saving with a clear goal and a regular contribution habit.','Small steps you can stick with','Goals'],['LOOK FURTHER AHEAD','Term Savings','Explore how putting money aside for a set period can support your longer-term plans.','A defined term for a defined goal','Term']]};
 const panel=document.querySelector('#products');function render(type){panel.innerHTML=products[type].map((p,i)=>`<article class="product ${i===1?'featured':''}"><span class="label">${p[0]}</span><h3>${p[1]}</h3><p>${p[2]}</p><div class="feature">${p[3]}</div><button data-dialog="${p[4]}">Explore account</button></article>`).join('')}
 function tabChange(t){document.querySelectorAll('[data-tab]').forEach(b=>{b.setAttribute('aria-selected',b===t);b.tabIndex=b===t?0:-1});panel.setAttribute('aria-labelledby',t.id);render(t.dataset.tab)}document.querySelectorAll('[data-tab]').forEach(t=>{t.addEventListener('click',()=>tabChange(t));t.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const tabs=[...document.querySelectorAll('[data-tab]')];const next=e.key==='Home'?tabs[0]:e.key==='End'?tabs[1]:tabs.find(x=>x!==t);tabChange(next);next.focus()}})});render('everyday');

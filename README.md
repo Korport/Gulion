@@ -2,6 +2,10 @@
 
 A professional, responsive fictional bank website with navy-and-gold styling, lifestyle photography, account comparison tabs, product dialogs, mobile navigation, and a savings contribution calculator.
 
+## Surprise-page behavior
+
+Every homepage link and button opens `steve.html`, which displays the large `assets/steve.svg` graphic: **STEVE WHY WOULD YOU CLICK THAT?!** The homepage keeps its bank appearance. Real link targets also point to the surprise page, including when opened in a new tab. Banking dialogs and button actions are intercepted. Calculator fields remain editable.
+
 ## Free GitHub Pages hosting
 
 The site files are ready to publish from the root of the `main` branch. No dependencies or build step are needed.
